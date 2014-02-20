@@ -5,9 +5,9 @@ Connect to remote database in OpenShift :
 
 Here is a test I tried :
 
-###1 : Created 2 applications `application1` and `application2` (JBoss EAP Cartridge)
+####1 : Created 2 applications `application1` and `application2` (JBoss EAP Cartridge)
 
-###2 : Added `mysql` cartridge to `application1` application.
+####2 : Added `mysql` cartridge to `application1` application.
 
 ```
 
@@ -26,7 +26,7 @@ ID                       State   Cartridges Size  SSH URL
 ```
 
 
-###3 : I ssh to `application1` and then went to mysql prompt and created a table `author`. 
+####3 : I ssh to `application1` and then went to mysql prompt and created a table `author`. 
 
 ```
 
@@ -79,7 +79,7 @@ mysql> select * from authors;
 
 ```
 
-###4 : Now I will write a standalone program on `application2` , which will query the database `application1`
+####4 : Now I will write a standalone program on `application2` , which will query the database `application1`
 
 ```
 
@@ -166,7 +166,7 @@ So I need to modify this to a database url as : "jdbc:mysql://5304b72d4382ecd9f3
 I simply removed the credentials and added the schema and `jdbc` protocol here.
 
 
-###5 : Once done you would need to `scp` the driver jar and put it in the classpath :
+####5 : Once done you would need to `scp` the driver jar and put it in the classpath :
 
 ```
 $ scp mysql-connector-java-5.1.13-bin.jar 5304b8215973ca96b5000001@application2-testuser.rhcloud.com:/var/lib/openshift/5304b8215973ca96b5000001/app-root/data     <<< Should be run from your local machine (You would need to modify the command according to your application)
@@ -205,7 +205,7 @@ Once done run the program :
 ```
 
 
-Note : This is just an example with standalone code. If you have a web/J2EE application (war/ear) the best idea is to create a datasource and then doing the lookups. For eg :
+####Note : This is just an example with standalone code. If you have a web/J2EE application (war/ear) the best idea is to create a datasource and then doing the lookups. For eg :
 
 ```
                 <datasource jndi-name="java:jboss/datasources/MysqlDS"
