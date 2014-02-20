@@ -5,7 +5,7 @@ Connect to remote database in OpenShift :
 
 Here is a test I tried :
 
-####1 : Created 2 applications `application1` and `application2` (JBoss EAP Cartridge)
+####1 : Created 2 applications `application1` and `application2` (JBoss EAP/AS Cartridge). Also make sure `application1` should be `scalable`.
 
 ####2 : Added `mysql` cartridge to `application1` application.
 
